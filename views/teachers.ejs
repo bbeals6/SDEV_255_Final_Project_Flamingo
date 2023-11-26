@@ -1,0 +1,30 @@
+<%- include('./partials/header.ejs') %>
+
+  <section class="p-5">
+    <div class="container">
+      <h2>Teachers</h2>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let row of teachers) { %>
+          <tr>
+            <td><%= row.id %></td>
+            <td><%= row.name %></td>
+            <td><!-- @todo --></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      
+    </div>
+  </section>
+
+
+<%- include('./partials/footer.ejs') %>

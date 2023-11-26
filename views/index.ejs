@@ -1,0 +1,45 @@
+<%- include('./partials/header.ejs') %>
+
+  <section class="p-5">
+    <div class="container">
+      <h2>Courses</h2>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Subject Area</th>
+            <th scope="col">Credit Hours</th>
+            <th scope="col">Teacher</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let row of courses) { %>
+          <tr>
+            <td><%= row.id %></td>
+            <td><%= row.name %></td>
+            <td><%= row.description %></td>
+            <td><%= row.subjectArea %></td>
+            <td><%= row.creditHours %></td>
+            <td><%= row.teacherId %></td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <a class="btn btn-sm btn-primary">View</a>
+                <a class="btn btn-sm btn-secondary">Register</a>
+                <!-- @todo only for authorized users -->
+                <a class="btn btn-sm btn-danger">Delete</a>
+              </div>              
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      
+    </div>
+  </section>
+
+
+<%- include('./partials/footer.ejs') %>
